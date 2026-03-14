@@ -24,6 +24,7 @@ class NodesPage extends StatelessWidget {
         nodeRepository: context.read<NodeRepository>(),
       )..add(NodeLoadStarted(clusterId)),
       child: _NodesView(
+        clusterId: clusterId,
         clusterName: clusterName,
         isEmbedded: isEmbedded,
       ),
@@ -32,10 +33,12 @@ class NodesPage extends StatelessWidget {
 }
 
 class _NodesView extends StatelessWidget {
+  final String clusterId;
   final String clusterName;
   final bool isEmbedded;
 
   const _NodesView({
+    required this.clusterId,
     required this.clusterName,
     required this.isEmbedded,
   });
@@ -52,7 +55,7 @@ class _NodesView extends StatelessWidget {
           } else if (state is NodeLoaded) {
             return RefreshIndicator(
               onRefresh: () async {
-                 // Refresh logic
+                context.read<NodeBloc>().add(NodeLoadStarted(clusterId));
               },
               child: ListView.builder(
                 padding: const EdgeInsets.all(16),
@@ -92,11 +95,7 @@ class _NodesView extends StatelessWidget {
           } else if (state is NodeLoaded) {
             return RefreshIndicator(
               onRefresh: () async {
-                // Determine clusterId from context or pass it down?
-                // For simplicity, we assume the Bloc handles refresh logic if we emit event
-                // But we need clusterId. 
-                // Ideally, Bloc should keep state of clusterId or we grab it.
-                // Let's just reload for now or improve Bloc to hold request params.
+                context.read<NodeBloc>().add(NodeLoadStarted(clusterId));
               },
               child: ListView.builder(
                 padding: const EdgeInsets.all(16),

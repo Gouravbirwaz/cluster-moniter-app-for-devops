@@ -1,53 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color(0xFF111217), // Grafana Dark Background
+      scaffoldBackgroundColor: AppColors.background,
       colorScheme: const ColorScheme.dark(
-        primary: Color(0xFF3274D9), // Grafana Blue
-        secondary: Color(0xFF5794F2), // Lighter Blue
-        surface: Color(0xFF181B1F), // Panel Background
-        error: Color(0xFFE02F44), // Red
+        primary: AppColors.primary,
+        secondary: AppColors.secondary,
+        surface: AppColors.surface,
+        error: AppColors.critical,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
-        onSurface: Color(0xFFCCCCDC), // Text Color
+        onSurface: AppColors.textMain,
       ),
       textTheme: GoogleFonts.interTextTheme(
         ThemeData.dark().textTheme,
       ).apply(
-        bodyColor: const Color(0xFFCCCCDC),
-        displayColor: const Color(0xFFCCCCDC),
+        bodyColor: AppColors.textMain,
+        displayColor: AppColors.textHighlight,
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(0xFF111217),
+        backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: false,
         titleTextStyle: TextStyle(
-          color: Color(0xFFF7F8FA),
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
+          color: AppColors.textHighlight,
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
         ),
-        iconTheme: IconThemeData(color: Color(0xFFCCCCDC)),
+        iconTheme: IconThemeData(color: AppColors.textMain),
       ),
       dividerTheme: const DividerThemeData(
-        color: Color(0xFF202226),
+        color: AppColors.border,
         thickness: 1,
       ),
-      /*
-      cardTheme: CardTheme(
-        color: const Color(0xFF181B1F),
+      cardTheme: CardThemeData(
+        color: AppColors.surface,
         elevation: 0,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2), // Sharper corners like Grafana
-          side: const BorderSide(color: Color(0xFF202226)), // Subtle border
+          borderRadius: BorderRadius.circular(4),
+          side: const BorderSide(color: AppColors.border),
         ),
       ),
-      */
     );
   }
 }

@@ -39,24 +39,30 @@ class NodeCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: statusColor,
-                          shape: BoxShape.circle,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 10,
+                          height: 10,
+                          decoration: BoxDecoration(
+                            color: statusColor,
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        node.name,
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontFamily: 'monospace',
-                            ),
-                      ),
-                    ],
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            node.name,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                  fontFamily: 'monospace',
+                                ),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                      ],
+                    ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -98,8 +104,8 @@ class NodeCard extends StatelessWidget {
                   ),
                    _NodeMetric(
                     label: 'DISK',
-                    value: '${node.diskPressure.toStringAsFixed(1)}%',
-                    color: node.diskPressure > 80 ? Colors.orange : null,
+                    value: node.diskPressure ? 'YES' : 'NO',
+                    color: node.diskPressure ? Colors.red : null,
                   ),
                 ],
               ),

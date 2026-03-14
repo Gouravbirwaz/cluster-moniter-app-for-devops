@@ -1,5 +1,11 @@
 fastapi
 uvicorn
-kubernetes
+httpx
 python-dotenv
 pydantic
+pydantic-settings
+kubernetes
+redis
+PyJWT
+python-multipart
+passlib[bcrypt]

@@ -97,4 +97,34 @@ class MockWorkloadRepositoryImpl implements WorkloadRepository {
     }
     return [];
   }
+
+  @override
+  Future<List<WorkloadEntity>> getPods(String clusterId, String namespace) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    final now = DateTime.now();
+    return [
+      WorkloadEntity(
+        id: 'pod-1',
+        name: 'frontend-pod-a7b2',
+        namespace: namespace,
+        type: WorkloadType.deployment,
+        replicas: 1,
+        availableReplicas: 1,
+        image: 'registry.com/frontend:v1.2.0',
+        status: 'Running',
+        lastUpdate: now.subtract(const Duration(minutes: 5)),
+      ),
+      WorkloadEntity(
+        id: 'pod-2',
+        name: 'backend-pod-x9y4',
+        namespace: namespace,
+        type: WorkloadType.deployment,
+        replicas: 1,
+        availableReplicas: 1,
+        image: 'registry.com/backend:v2.0.1',
+        status: 'Running',
+        lastUpdate: now.subtract(const Duration(minutes: 10)),
+      ),
+    ];
+  }
 }

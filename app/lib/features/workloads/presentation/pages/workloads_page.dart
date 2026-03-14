@@ -34,12 +34,17 @@ class WorkloadsPage extends StatelessWidget {
               if (state.workloads.isEmpty) {
                 return const Center(child: Text('No workloads found'));
               }
-              return ListView.builder(
-                padding: const EdgeInsets.all(16),
-                itemCount: state.workloads.length,
-                itemBuilder: (context, index) {
-                  return WorkloadCard(workload: state.workloads[index]);
+              return RefreshIndicator(
+                onRefresh: () async {
+                  context.read<WorkloadBloc>().add(WorkloadsLoadStarted(clusterId, namespace));
                 },
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(16),
+                  itemCount: state.workloads.length,
+                  itemBuilder: (context, index) {
+                    return WorkloadCard(workload: state.workloads[index]);
+                  },
+                ),
               );
             }
             return const SizedBox.shrink();

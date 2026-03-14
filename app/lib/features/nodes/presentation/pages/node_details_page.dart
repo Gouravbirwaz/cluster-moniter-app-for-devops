@@ -46,7 +46,7 @@ class NodeDetailsPage extends StatelessWidget {
             const SizedBox(height: 24),
             MetricChart(
               title: 'Disk Pressure (Last 24h)',
-              data: _generateMockData(node.diskPressure),
+              data: _generateMockData(node.diskPressure ? 100.0 : 0.0),
               color: Colors.orange,
             ),
           ],

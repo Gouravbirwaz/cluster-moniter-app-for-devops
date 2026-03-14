@@ -10,28 +10,44 @@ class RemoteWorkloadRepositoryImpl implements WorkloadRepository {
 
   @override
   Future<List<NamespaceEntity>> getNamespaces(String clusterId) async {
-    final List<dynamic> data = await apiClient.get('/clusters/$clusterId/namespaces');
+    final List<dynamic> data = await apiClient.get('/api/v1/workloads/namespaces');
     return data.map((json) => NamespaceEntity(
       name: json['name'],
       status: json['status'],
-      totalPods: json['totalPods'],
-      runningPods: json['runningPods'],
-      failedPods: json['failedPods'],
+      totalPods: json['total_pods'] ?? 0,
+      runningPods: json['running_pods'] ?? 0,
+      failedPods: json['failed_pods'] ?? 0,
     )).toList();
   }
 
   @override
   Future<List<WorkloadEntity>> getWorkloads(String clusterId, String namespace) async {
-    final List<dynamic> data = await apiClient.get('/clusters/$clusterId/namespaces/$namespace/workloads');
+    final List<dynamic> data = await apiClient.get('/api/v1/workloads?namespace=$namespace');
     return data.map((json) => WorkloadEntity(
       id: json['id'],
       name: json['name'],
       type: _parseType(json['type']),
       namespace: json['namespace'],
       replicas: json['replicas'],
-      availableReplicas: json['availableReplicas'],
+      availableReplicas: json['available_replicas'],
       image: json['image'],
-      lastUpdate: DateTime.parse(json['lastUpdate']),
+      lastUpdate: DateTime.parse(json['creation_timestamp']),
+      status: json['status'],
+    )).toList();
+  }
+
+  @override
+  Future<List<WorkloadEntity>> getPods(String clusterId, String namespace) async {
+    final List<dynamic> data = await apiClient.get('/api/v1/pods?namespace=$namespace');
+    return data.map((json) => WorkloadEntity(
+      id: json['id'],
+      name: json['name'],
+      type: WorkloadType.pod,
+      namespace: json['namespace'],
+      replicas: 1,
+      availableReplicas: 1,
+      image: json['image'],
+      lastUpdate: json['start_time'] != null ? DateTime.parse(json['start_time']) : DateTime.now(),
       status: json['status'],
     )).toList();
   }

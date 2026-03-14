@@ -9,24 +9,23 @@ class RemoteNodeRepositoryImpl implements NodeRepository {
 
   @override
   Future<List<NodeEntity>> getNodes(String clusterId) async {
-    final List<dynamic> data = await apiClient.get('/clusters/$clusterId/nodes');
+    final List<dynamic> data = await apiClient.get('/api/v1/nodes');
     return data.map((json) => NodeEntity(
       id: json['id'],
       name: json['name'],
-      clusterId: json['clusterId'],
-      status: _parseStatus(json['status']),
-      role: json['role'],
-      version: json['version'],
-      cpuUsage: (json['cpuUsage'] as num).toDouble(),
-      memoryUsage: (json['memoryUsage'] as num).toDouble(),
-      diskPressure: (json['diskPressure'] as num).toDouble(),
-      networkIo: (json['networkIo'] as num).toDouble(),
+      clusterId: clusterId, // Backend might not return it, so we use passed one
+      status: _parseStatus(json['status'] ?? 'unknown'),
+      role: json['role'] ?? 'worker',
+      version: json['version'] ?? 'unknown',
+      cpuUsage: (json['cpu_usage_pct'] as num?)?.toDouble() ?? 0.0,
+      memoryUsage: (json['memory_usage_pct'] as num?)?.toDouble() ?? 0.0,
+      diskPressure: json['disk_pressure'] == true,
+      networkIo: (json['network_io'] as num?)?.toDouble() ?? 0.0,
     )).toList();
   }
 
   @override
   Future<NodeEntity> getNodeDetails(String clusterId, String nodeId) async {
-    // For now, re-using getNodes and filtering, or we could add a specific endpoint
     final nodes = await getNodes(clusterId);
     return nodes.firstWhere((n) => n.id == nodeId);
   }

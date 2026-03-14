@@ -9,7 +9,7 @@ class RemoteAlertRepositoryImpl implements AlertRepository {
 
   @override
   Future<List<AlertEntity>> getActiveAlerts() async {
-    final List<dynamic> data = await apiClient.get('/alerts');
+    final List<dynamic> data = await apiClient.get('/api/v1/alerts');
     return data.map((json) => AlertEntity(
       id: json['id'],
       title: json['title'],

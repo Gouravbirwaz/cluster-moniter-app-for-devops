@@ -11,7 +11,7 @@ class NodeEntity extends Equatable {
   final String version;
   final double cpuUsage; // %
   final double memoryUsage; // %
-  final double diskPressure; // %
+  final bool diskPressure; // Boolean condition
   final double networkIo; // Mbps
 
   const NodeEntity({

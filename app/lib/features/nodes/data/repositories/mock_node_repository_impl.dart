@@ -15,7 +15,7 @@ class MockNodeRepositoryImpl implements NodeRepository {
         version: 'v1.28.2',
         cpuUsage: 15.0 + (index * 12),
         memoryUsage: 40.0 + (index * 8),
-        diskPressure: 10.0 + (index * 2),
+        diskPressure: index == 4, // bool instead of double
         networkIo: 250.0 + (index * 50),
       );
     });
@@ -33,7 +33,7 @@ class MockNodeRepositoryImpl implements NodeRepository {
       version: 'v1.28.2',
       cpuUsage: 45.0,
       memoryUsage: 62.0,
-      diskPressure: 12.0,
+      diskPressure: false, // bool instead of double
       networkIo: 450.0,
     );
   }
