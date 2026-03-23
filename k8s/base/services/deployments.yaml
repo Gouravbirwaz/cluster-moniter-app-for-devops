@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: devops-platform
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+      - name: api-gateway
+        image: devops/api-gateway:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: platform-secrets
+              key: jwt-secret
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent1-reasoning
+  namespace: devops-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent1-reasoning
+  template:
+    metadata:
+      labels:
+        app: agent1-reasoning
+    spec:
+      containers:
+      - name: agent1-reasoning
+        image: devops/agent1-reasoning:latest
+        ports:
+        - containerPort: 8003
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-service
+  namespace: devops-platform
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vault-service
+  template:
+    metadata:
+      labels:
+        app: vault-service
+    spec:
+      containers:
+      - name: vault-service
+        image: devops/vault-service:latest
+        ports:
+        - containerPort: 8002
+        volumeMounts:
+        - name: vault-db
+          mountPath: /app/data
+      volumes:
+      - name: vault-db
+        persistentVolumeClaim:
+          claimName: vault-pvc

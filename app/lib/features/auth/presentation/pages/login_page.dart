@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:local_auth/local_auth.dart';
 import '../bloc/auth_bloc.dart';
-import '../../../../features/dashboard/presentation/pages/dashboard_page.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
         });
         if (authenticated) {
           context.read<AuthBloc>().add(
-                const AuthLoginRequested('admin', 'password'),
+                const AuthLocalBiometricSuccess(),
               );
         }
       }
@@ -59,60 +59,162 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocListener<AuthBloc, AuthState>(
-        listener: (context, state) {
-          if (state is AuthFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.message)),
-            );
-          } else if (state is AuthAuthenticated) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const DashboardPage()),
-            );
-          }
-        },
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.fingerprint, size: 80, color: Colors.blue),
-                const SizedBox(height: 32),
-                Text(
-                  'DevOps Monitor',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  textAlign: TextAlign.center,
+      body: Container(
+        decoration: const BoxDecoration(
+          color: AppColors.background,
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              AppColors.background,
+              Color(0xFF16181D),
+            ],
+          ),
+        ),
+        child: BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state is AuthFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.message),
+                  backgroundColor: AppColors.critical,
                 ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Biometric Authentication Required',
-                  style: TextStyle(color: Colors.grey),
-                ),
-                const SizedBox(height: 48),
-                BlocBuilder<AuthBloc, AuthState>(
-                  builder: (context, state) {
-                    if (state is AuthLoading || _isAuthenticating) {
-                      return const CircularProgressIndicator.adaptive();
-                    }
-                    return ElevatedButton.icon(
-                      onPressed: _authenticate,
-                      icon: const Icon(Icons.fingerprint),
-                      label: const Text('Authenticate'),
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 32,
-                          vertical: 16,
+              );
+            }
+          },
+          child: SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withOpacity(0.05),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.primary.withOpacity(0.1),
+                          width: 2,
                         ),
                       ),
-                    );
-                  },
+                      child: const Icon(
+                        Icons.fingerprint_rounded,
+                        size: 80,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    const Text(
+                      'SirenNet',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w900,
+                        color: AppColors.textHighlight,
+                        letterSpacing: -1,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'DevOps Monitoring Platform',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.textDim,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 64),
+                    const Text(
+                      'Secure Biometric Access',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.textMain,
+                        letterSpacing: 1.2,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    BlocBuilder<AuthBloc, AuthState>(
+                      builder: (context, state) {
+                        return _buildAuthButton(state);
+                      },
+                    ),
+                    const SizedBox(height: 24),
+                    TextButton(
+                      onPressed: () {
+                        // Implement password fallback if needed
+                      },
+                      child: const Text(
+                        'Use access token instead',
+                        style: TextStyle(
+                          color: AppColors.textDim,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
       ),
     );
   }
+
+  Widget _buildAuthButton(AuthState state) {
+    bool isLoading = state is AuthLoading || _isAuthenticating;
+
+    return InkWell(
+      onTap: isLoading ? null : _authenticate,
+      borderRadius: BorderRadius.circular(16),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        width: 240,
+        height: 56,
+        decoration: BoxDecoration(
+          color: isLoading ? AppColors.surface : AppColors.primary,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            if (!isLoading)
+              BoxShadow(
+                color: AppColors.primary.withOpacity(0.3),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+          ],
+        ),
+        child: Center(
+          child: isLoading
+              ? const SizedBox(
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: AppColors.textHighlight,
+                  ),
+                )
+              : const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.lock_open_rounded, size: 20, color: Colors.white),
+                    SizedBox(width: 12),
+                    Text(
+                      'Authenticate',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+        ),
+      ),
+    );
+  }
+
 }

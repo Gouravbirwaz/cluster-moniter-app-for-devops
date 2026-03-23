@@ -1,4 +1,11 @@
 from fastapi import FastAPI
+import logging
+
+# Silence verbose library logs
+for logger_name in ["urllib3", "urllib3.connectionpool", "kubernetes", "kubernetes.client.rest"]:
+    logging.getLogger(logger_name).setLevel(logging.ERROR)
+    logging.getLogger(logger_name).propagate = False
+
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import vault_router
 from app.models.secret_models import Base
@@ -20,11 +27,13 @@ app.add_middleware(
 engine = create_engine(settings.DATABASE_URL)
 Base.metadata.create_all(bind=engine)
 
-app.include_router(vault_router.router, prefix="/api/v1")
+app.include_router(vault_router.router, prefix="/api/v1/vault")
+
 
 @app.get("/")
 async def root():
-    return {"message": "Vault Service is running", "version": "1.0.0"}
+    return {"message": "Vault Service is running", "prefix": "/api/v1/vault", "version": "1.0.0"}
+
 
 if __name__ == "__main__":
     import uvicorn

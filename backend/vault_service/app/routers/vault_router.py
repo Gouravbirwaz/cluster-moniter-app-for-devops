@@ -7,7 +7,8 @@ from typing import List, Optional
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-router = APIRouter(prefix="/vault", tags=["vault"])
+router = APIRouter(tags=["vault"])
+
 
 # Database setup
 engine = create_engine(settings.DATABASE_URL)

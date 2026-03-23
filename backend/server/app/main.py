@@ -14,11 +14,11 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
 
-# CORS
+# CORS - Allow all origins for dev, but handle credentials correctly for WebSockets
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False, # Credentials (cookies/auth) + "*" is a conflict for some WS implementations
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -40,6 +40,7 @@ app.include_router(websocket_router.router, prefix=settings.API_V1_STR)
 app.include_router(alert_router.router, prefix=settings.API_V1_STR)
 app.include_router(github_router.router, prefix=settings.API_V1_STR)
 app.include_router(vault_router.router, prefix=settings.API_V1_STR)
+app.include_router(cluster_router.router, prefix=settings.API_V1_STR)
 
 # Fallback for old app versions or direct calls
 app.include_router(github_router.router)

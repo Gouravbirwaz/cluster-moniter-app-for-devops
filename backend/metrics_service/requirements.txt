@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+prometheus-api-client
+httpx
+python-dotenv
+redis

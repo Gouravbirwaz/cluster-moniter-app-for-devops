@@ -1,4 +1,11 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+import logging
+
+# Silence verbose library logs
+for logger_name in ["urllib3", "urllib3.connectionpool", "kubernetes", "kubernetes.client.rest"]:
+    logging.getLogger(logger_name).setLevel(logging.ERROR)
+    logging.getLogger(logger_name).propagate = False
+
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routers import github_router
@@ -22,9 +29,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
-app.include_router(github_router.router)
-app.include_router(webhook_handler.router)
+# Include routers with prefix for Nginx routing
+app.include_router(github_router.router, prefix="/api/v1/github")
+app.include_router(webhook_handler.router, prefix="/api/v1/github")
+
 
 @app.on_event("startup")
 def startup_event():
@@ -35,7 +43,8 @@ def startup_event():
 def health_check():
     return {"status": "healthy", "service": "github-monitoring"}
 
-@app.websocket("/ws/repo/{repo_owner}/{repo_name}")
+@app.websocket("/api/v1/github/ws/repo/{repo_owner}/{repo_name}")
+
 async def repo_websocket_endpoint(websocket: WebSocket, repo_owner: str, repo_name: str):
     channel = f"repo_{repo_owner}_{repo_name}"
     await manager.connect(websocket, channel)

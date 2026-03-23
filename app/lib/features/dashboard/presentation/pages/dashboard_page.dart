@@ -51,78 +51,293 @@ class _DashboardPageState extends State<DashboardPage> {
           );
         }
 
-        final data = provider.overview ?? {};
-
         return SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSizes.paddingM),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              _buildHeader(),
+              const SizedBox(height: 20),
+              _buildMetricGridSection(),
+              const SizedBox(height: AppSizes.paddingM),
+              _buildChartsSection(),
+              const SizedBox(height: AppSizes.paddingM),
+              _buildNodeHealthSectionFiltered(),
+              const SizedBox(height: AppSizes.paddingM),
+              _buildTopPodsSectionFiltered(),
+              const SizedBox(height: AppSizes.paddingM),
+              _buildRecentEventsSection(),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildHeader() {
+    return Selector<DashboardProvider, bool>(
+      selector: (_, p) => p.isWebSocketConnected,
+      builder: (context, isConnected, child) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Cluster Dashboard',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textHighlight,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: isConnected 
+                    ? AppColors.healthy.withOpacity(0.1) 
+                    : AppColors.critical.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: isConnected 
+                      ? AppColors.healthy.withOpacity(0.5) 
+                      : AppColors.critical.withOpacity(0.5),
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    'Cluster Dashboard',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.textMain,
+                  Container(
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: isConnected ? AppColors.healthy : AppColors.critical,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        if (isConnected)
+                          BoxShadow(
+                            color: AppColors.healthy.withOpacity(0.5),
+                            blurRadius: 4,
+                            spreadRadius: 1,
+                          ),
+                      ],
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: provider.isWebSocketConnected 
-                          ? AppColors.healthy.withOpacity(0.1) 
-                          : AppColors.critical.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: provider.isWebSocketConnected 
-                            ? AppColors.healthy.withOpacity(0.5) 
-                            : AppColors.critical.withOpacity(0.5),
-                        width: 1,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: provider.isWebSocketConnected ? AppColors.healthy : AppColors.critical,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              if (provider.isWebSocketConnected)
-                                BoxShadow(
-                                  color: AppColors.healthy.withOpacity(0.5),
-                                  blurRadius: 4,
-                                  spreadRadius: 1,
-                                ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          provider.isWebSocketConnected ? 'LIVE' : 'DISCONNECTED',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: provider.isWebSocketConnected ? AppColors.healthy : AppColors.critical,
-                            letterSpacing: 1.2,
-                          ),
-                        ),
-                      ],
+                  const SizedBox(width: 6),
+                  Text(
+                    isConnected ? 'LIVE' : 'DISCONNECTED',
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: isConnected ? AppColors.healthy : AppColors.critical,
+                      letterSpacing: 1.2,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
-              _buildMetricGrid(data),
-              const SizedBox(height: AppSizes.paddingM),
-              _buildCharts(),
-              const SizedBox(height: AppSizes.paddingM),
-              _buildBottomSection(),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildMetricGridSection() {
+    return Selector<DashboardProvider, Map<String, dynamic>>(
+      selector: (_, p) => p.overview ?? {},
+      builder: (context, data, child) {
+        return _buildMetricGrid(data);
+      },
+    );
+  }
+
+  Widget _buildChartsSection() {
+    return Selector<DashboardProvider, List<List<FlSpot>>>(
+      selector: (_, p) => [p.cpuSpots, p.memorySpots],
+      builder: (context, spots, child) {
+        return SizedBox(
+          height: 300,
+          child: Row(
+            children: [
+              Expanded(
+                child: MetricsChart(
+                  title: 'Cluster CPU Over Time',
+                  color: AppColors.cpu,
+                  spots: spots[0],
+                ),
+              ),
+              const SizedBox(width: AppSizes.paddingM),
+              Expanded(
+                child: MetricsChart(
+                  title: 'Cluster Memory Over Time',
+                  color: AppColors.memory,
+                  spots: spots[1],
+                ),
+              ),
             ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildNodeHealthSectionFiltered() {
+    return Selector<DashboardProvider, List<dynamic>>(
+      selector: (_, p) => p.overview?['nodes'] ?? [],
+      builder: (context, nodes, child) {
+        if (nodes.isEmpty) return const SizedBox.shrink();
+        
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Node Health',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textHighlight),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              height: 80,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: nodes.length,
+                itemBuilder: (context, index) {
+                  final node = nodes[index];
+                  final bool isReady = node['ready'] ?? false;
+                  final String nodeName = node['name'] ?? 'unknown';
+
+                  return Container(
+                    width: 150,
+                    margin: const EdgeInsets.only(right: 12),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: AppColors.surface,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: AppColors.border),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.dns, size: 16, color: isReady ? Colors.green : Colors.red),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(nodeName, 
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, overflow: TextOverflow.ellipsis)),
+                              Text(isReady ? 'Ready' : 'NotReady', 
+                                style: TextStyle(fontSize: 10, color: isReady ? Colors.green : Colors.red)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildTopPodsSectionFiltered() {
+    return Selector<DashboardProvider, List<Map<String, dynamic>>>(
+      selector: (_, p) => p.topPods,
+      builder: (context, topPods, child) {
+        if (topPods.isEmpty) return const SizedBox.shrink();
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Top Resource Consumers',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textHighlight),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.surface,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: AppColors.border),
+              ),
+              child: ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: topPods.length,
+                separatorBuilder: (context, index) => const Divider(height: 1, color: AppColors.border),
+                itemBuilder: (context, index) {
+                  final pod = topPods[index];
+                  return ListTile(
+                    dense: true,
+                    leading: const Icon(Icons.widgets_outlined, size: 18, color: AppColors.primary),
+                    title: Text(pod['name'] ?? 'Unknown', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _buildTag(pod['cpu'] ?? '0m', Colors.blue),
+                        const SizedBox(width: 8),
+                        _buildTag(pod['mem'] ?? '0Mi', Colors.purple),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildRecentEventsSection() {
+    return Selector<DashboardProvider, List<Map<String, dynamic>>>(
+      selector: (_, p) => p.events,
+      builder: (context, events, child) {
+        final top3Events = events.take(3).toList();
+        
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSizes.paddingM),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Recent Cluster Events',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textHighlight,
+                      ),
+                    ),
+                    if (events.length > 3)
+                      Text(
+                        'Showing 3 of ${events.length}',
+                        style: const TextStyle(fontSize: 12, color: AppColors.textDim),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: AppSizes.paddingM),
+                if (top3Events.isEmpty)
+                  const Center(child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('No recent events', style: TextStyle(color: AppColors.textDim)),
+                  ))
+                else
+                  ...top3Events.map((event) {
+                    final type = event['type'] ?? 'info';
+                    final color = type.contains('failure') ? AppColors.critical : (type.contains('warning') ? AppColors.warning : AppColors.healthy);
+                    return _buildEventItem(
+                      event['message'] ?? event['data']?['message'] ?? 'Unknown event',
+                      'Just now', 
+                      color,
+                    );
+                  }),
+              ],
+            ),
           ),
         );
       },
@@ -136,7 +351,7 @@ class _DashboardPageState extends State<DashboardPage> {
       crossAxisCount: MediaQuery.of(context).size.width > 1200 ? 4 : 2,
       crossAxisSpacing: AppSizes.paddingM,
       mainAxisSpacing: AppSizes.paddingM,
-      childAspectRatio: MediaQuery.of(context).size.width > 600 ? 2 : 1.4,
+      childAspectRatio: MediaQuery.of(context).size.width > 600 ? 1.8 : 1.1,
       children: [
         StatusCard(
           title: 'TOTAL NODES',
@@ -172,63 +387,21 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  Widget _buildCharts() {
-    return SizedBox(
-      height: 300,
-      child: Row(
-        children: [
-          Expanded(
-            child: MetricsChart(
-              title: 'Cluster CPU Over Time',
-              color: AppColors.cpu,
-              spots: const [
-                FlSpot(0, 30), FlSpot(1, 35), FlSpot(2, 45), FlSpot(3, 40),
-                FlSpot(4, 50), FlSpot(5, 55), FlSpot(6, 48), FlSpot(7, 52),
-              ],
-            ),
-          ),
-          const SizedBox(width: AppSizes.paddingM),
-          Expanded(
-            child: MetricsChart(
-              title: 'Cluster Memory Over Time',
-              color: AppColors.memory,
-              spots: const [
-                FlSpot(0, 60), FlSpot(1, 62), FlSpot(2, 65), FlSpot(3, 63),
-                FlSpot(4, 68), FlSpot(5, 70), FlSpot(6, 72), FlSpot(7, 71),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildBottomSection() {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSizes.paddingM),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Recent Cluster Events',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textHighlight,
-              ),
-            ),
-            const SizedBox(height: AppSizes.paddingM),
-            _buildEventItem('Pod "backend-v1" restarted in namespace "prod"', '2m ago', AppColors.warning),
-            _buildEventItem('New node "worker-3" joined the cluster', '15m ago', AppColors.healthy),
-            _buildEventItem('Image pull failure on pod "redis-0"', '45m ago', AppColors.critical),
-          ],
-        ),
+  Widget _buildTag(String text, Color color) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(4),
+        border: Border.all(color: color.withOpacity(0.3)),
       ),
+      child: Text(text, style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
     );
   }
 
   Widget _buildEventItem(String message, String time, Color color) {
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(

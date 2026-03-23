@@ -21,7 +21,8 @@ async def connect_repository(req: RepoConnectRequest, db: Session = Depends(get_
         try:
             # Internal call to vault_service on 8002
             # vault_service has prefix /api/v1/vault
-            url = f"{settings.VAULT_SERVICE_URL}/vault/secrets/{req.token_secret_name}/value"
+            url = f"{settings.VAULT_SERVICE_URL}/api/v1/vault/secrets/{req.token_secret_name}/value"
+
             response = await client.get(url)
             if response.status_code != 200:
                 raise HTTPException(status_code=404, detail=f"Secret '{req.token_secret_name}' not found in Vault Service")
@@ -104,7 +105,8 @@ async def get_repo_commits(owner: str, repo: str, db: Session = Depends(get_db))
     async with httpx.AsyncClient() as client:
         try:
             # Use fixed path segments for vault call to avoid similar issues
-            url = f"{settings.VAULT_SERVICE_URL}/vault/secrets/{db_repo.token_secret_name}/value"
+            url = f"{settings.VAULT_SERVICE_URL}/api/v1/vault/secrets/{db_repo.token_secret_name}/value"
+
             response = await client.get(url)
             if response.status_code != 200:
                 raise HTTPException(status_code=404, detail=f"Token '{db_repo.token_secret_name}' not found in Vault")
@@ -131,7 +133,8 @@ async def get_repo_pulls(owner: str, repo: str, db: Session = Depends(get_db)):
     
     async with httpx.AsyncClient() as client:
         try:
-            url = f"{settings.VAULT_SERVICE_URL}/vault/secrets/{db_repo.token_secret_name}/value"
+            url = f"{settings.VAULT_SERVICE_URL}/api/v1/vault/secrets/{db_repo.token_secret_name}/value"
+
             response = await client.get(url)
             token = response.json().get("value")
         except Exception as e:
@@ -155,7 +158,8 @@ async def get_repo_workflows(owner: str, repo: str, db: Session = Depends(get_db
     
     async with httpx.AsyncClient() as client:
         try:
-            url = f"{settings.VAULT_SERVICE_URL}/vault/secrets/{db_repo.token_secret_name}/value"
+            url = f"{settings.VAULT_SERVICE_URL}/api/v1/vault/secrets/{db_repo.token_secret_name}/value"
+
             response = await client.get(url)
             token = response.json().get("value")
         except Exception as e:

@@ -26,7 +26,7 @@ class StatusCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,12 +46,16 @@ class StatusCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  value,
-                  style: const TextStyle(
-                    color: AppColors.textHighlight,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                Flexible(
+                  child: Text(
+                    value,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: AppColors.textHighlight,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 if (subtitle != null) ...[
@@ -92,9 +96,13 @@ class StatusCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 4),
-                  const Text(
-                    'vs last hour',
-                    style: TextStyle(color: AppColors.textDim, fontSize: 11),
+                  Flexible(
+                    child: Text(
+                      'vs last hour',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: AppColors.textDim, fontSize: 11),
+                    ),
                   ),
                 ],
               ),

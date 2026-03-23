@@ -1,0 +1,625 @@
+2026-03-15 22:29:02,387 - app.services.prometheus_client - INFO - Connected to Prometheus at http://localhost:9090
+2026-03-15 22:29:02,411 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:30:40,092 - app.services.prometheus_client - INFO - Connected to Prometheus at http://localhost:9090
+2026-03-15 22:30:40,093 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:31:03,424 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:31:03,528 - app.services.prometheus_client - INFO - Prometheus connection check took 0.10s
+2026-03-15 22:31:03,548 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:31:03,549 - app.services.prometheus_client - INFO - get_cluster_metrics total took 17.65s
+2026-03-15 22:31:18,138 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:31:18,168 - app.services.prometheus_client - INFO - Prometheus connection check took 0.03s
+2026-03-15 22:31:18,186 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:31:18,187 - app.services.prometheus_client - INFO - get_cluster_metrics total took 12.59s
+2026-03-15 22:31:40,681 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:31:40,705 - app.services.prometheus_client - INFO - Prometheus connection check took 0.02s
+2026-03-15 22:31:40,723 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:31:40,724 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.99s
+2026-03-15 22:31:56,310 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:31:56,331 - app.services.prometheus_client - INFO - Prometheus connection check took 0.02s
+2026-03-15 22:31:56,345 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:31:56,346 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.57s
+2026-03-15 22:32:36,824 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:32:36,832 - app.services.prometheus_client - INFO - Prometheus connection check took 0.01s
+2026-03-15 22:32:36,839 - app.services.prometheus_client - INFO - Prometheus custom query took 0.00s
+2026-03-15 22:32:36,839 - app.services.prometheus_client - INFO - get_cluster_metrics total took 18.80s
+2026-03-15 22:32:51,484 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:32:51,498 - app.services.prometheus_client - INFO - Prometheus connection check took 0.01s
+2026-03-15 22:32:51,506 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:32:51,507 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.81s
+2026-03-15 22:33:12,644 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:33:12,658 - app.services.prometheus_client - INFO - Prometheus connection check took 0.01s
+2026-03-15 22:33:12,669 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:33:12,670 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.87s
+2026-03-15 22:33:14,826 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:33:14,839 - app.services.prometheus_client - INFO - Prometheus connection check took 0.01s
+2026-03-15 22:33:14,875 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:33:14,876 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.00s
+2026-03-15 22:33:49,565 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:33:49,583 - app.services.prometheus_client - INFO - Prometheus connection check took 0.02s
+2026-03-15 22:33:49,594 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:33:49,595 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.35s
+2026-03-15 22:34:09,445 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:34:09,471 - app.services.prometheus_client - INFO - Prometheus connection check took 0.02s
+2026-03-15 22:34:09,495 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:34:09,506 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.22s
+2026-03-15 22:35:01,895 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 22:35:01,906 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:35:14,377 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:35:14,465 - app.services.prometheus_client - INFO - Prometheus connection check took 0.09s
+2026-03-15 22:35:14,508 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-15 22:35:14,515 - app.services.prometheus_client - INFO - get_cluster_metrics total took 12.09s
+2026-03-15 22:35:15,839 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:35:15,853 - app.services.prometheus_client - INFO - Prometheus connection check took 0.01s
+2026-03-15 22:35:15,860 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:35:15,860 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.42s
+2026-03-15 22:35:16,088 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:35:17,072 - app.services.prometheus_client - INFO - Prometheus connection check took 0.05s
+2026-03-15 22:35:17,096 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:35:17,099 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.66s
+2026-03-15 22:35:58,888 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:35:58,907 - app.services.prometheus_client - INFO - Prometheus connection check took 0.02s
+2026-03-15 22:35:58,922 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:35:58,923 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.60s
+2026-03-15 22:36:22,978 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:36:23,011 - app.services.prometheus_client - INFO - Prometheus connection check took 0.03s
+2026-03-15 22:36:23,031 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:36:23,033 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.51s
+2026-03-15 22:36:40,473 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:36:40,507 - app.services.prometheus_client - INFO - Prometheus connection check took 0.03s
+2026-03-15 22:36:40,565 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-15 22:36:40,577 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.61s
+2026-03-15 22:37:11,977 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:37:12,006 - app.services.prometheus_client - INFO - Prometheus connection check took 0.03s
+2026-03-15 22:37:12,025 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:37:12,031 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.06s
+2026-03-15 22:37:14,255 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 22:37:14,259 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:37:25,376 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:37:25,379 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:37:25,436 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-15 22:37:25,436 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.97s
+2026-03-15 22:37:34,129 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:37:34,146 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:37:34,348 - app.services.prometheus_client - INFO - Prometheus custom query took 0.20s
+2026-03-15 22:37:34,356 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.84s
+2026-03-15 22:37:45,357 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:37:45,361 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:37:45,376 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:37:45,379 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.85s
+2026-03-15 22:38:21,472 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:38:21,476 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:38:21,494 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:38:21,494 - app.services.prometheus_client - INFO - get_cluster_metrics total took 18.87s
+2026-03-15 22:38:36,411 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:38:36,413 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:38:36,424 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:38:36,425 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.39s
+2026-03-15 22:39:12,318 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:39:12,322 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:39:12,334 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:39:12,335 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.23s
+2026-03-15 22:39:20,706 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:39:20,711 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:39:20,727 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:39:20,728 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.58s
+2026-03-15 22:39:47,562 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:39:47,566 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:39:47,580 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:39:47,582 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.85s
+2026-03-15 22:40:22,483 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:40:22,488 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:40:22,503 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:40:22,503 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.07s
+2026-03-15 22:40:36,463 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:40:36,480 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:40:36,587 - app.services.prometheus_client - INFO - Prometheus custom query took 0.10s
+2026-03-15 22:40:36,587 - app.services.prometheus_client - INFO - get_cluster_metrics total took 17.02s
+2026-03-15 22:40:54,047 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:40:54,063 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-15 22:40:54,075 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:40:54,075 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.08s
+2026-03-15 22:41:04,865 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 22:41:04,876 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:41:29,885 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:41:29,888 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:41:29,896 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:41:29,896 - app.services.prometheus_client - INFO - get_cluster_metrics total took 17.59s
+2026-03-15 22:41:33,237 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:41:33,239 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:41:33,248 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:41:33,248 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.83s
+2026-03-15 22:42:09,293 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:42:09,298 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 22:42:09,320 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:42:09,320 - app.services.prometheus_client - INFO - get_cluster_metrics total took 12.22s
+2026-03-15 22:45:48,135 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:45:48,142 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:45:48,163 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:45:48,164 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.69s
+2026-03-15 22:47:49,283 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:47:49,292 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:47:49,311 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 22:47:49,313 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.66s
+2026-03-15 22:50:50,498 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 22:50:50,517 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 22:51:32,468 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:51:32,483 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:51:32,533 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-15 22:51:32,534 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.71s
+2026-03-15 22:52:07,745 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:52:07,761 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:52:07,772 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 22:52:07,772 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.14s
+2026-03-15 22:55:37,632 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 22:55:37,647 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 22:55:38,990 - app.services.prometheus_client - INFO - Prometheus custom query took 1.34s
+2026-03-15 22:55:38,991 - app.services.prometheus_client - INFO - get_cluster_metrics total took 12.31s
+2026-03-15 23:06:39,883 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 23:06:39,888 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 23:07:50,312 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 23:07:50,314 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 23:07:50,478 - app.services.prometheus_client - INFO - Prometheus custom query took 0.16s
+2026-03-15 23:07:50,479 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.90s
+2026-03-15 23:15:46,484 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 23:15:46,488 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 23:16:22,586 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 23:16:22,600 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-15 23:16:22,682 - app.services.prometheus_client - INFO - Prometheus custom query took 0.08s
+2026-03-15 23:16:22,683 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.73s
+2026-03-15 23:16:54,336 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 23:16:54,338 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 23:16:54,348 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 23:16:54,350 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.49s
+2026-03-15 23:17:31,711 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 23:17:31,714 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 23:17:31,724 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-15 23:17:31,727 - app.services.prometheus_client - INFO - get_cluster_metrics total took 21.20s
+2026-03-15 23:17:42,514 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-15 23:17:42,519 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-15 23:17:42,540 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-15 23:17:42,542 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.81s
+2026-03-15 23:37:46,815 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-15 23:37:46,818 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-15 23:43:16,564 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:13:23,792 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-23 23:13:23,801 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-23 23:13:55,052 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:13:55,055 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:14:00,432 - app.services.prometheus_client - INFO - Prometheus custom query took 5.38s
+2026-03-23 23:14:00,433 - app.services.prometheus_client - INFO - get_cluster_metrics total took 18.75s
+2026-03-23 23:14:15,237 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:14:15,240 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:14:15,270 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-23 23:14:15,288 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.56s
+2026-03-23 23:14:37,727 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:14:37,730 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:14:38,109 - app.services.prometheus_client - INFO - Prometheus custom query took 0.38s
+2026-03-23 23:14:38,123 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.59s
+2026-03-23 23:16:03,395 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:16:03,397 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:16:03,513 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-23 23:16:03,513 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.67s
+2026-03-23 23:18:14,653 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:18:14,655 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:18:14,664 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-23 23:18:14,665 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.07s
+2026-03-23 23:19:34,953 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:19:34,954 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-23 23:19:34,963 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-23 23:19:34,964 - app.services.prometheus_client - INFO - get_cluster_metrics total took 13.65s
+2026-03-23 23:31:59,280 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:31:59,492 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-23 23:32:30,075 - app.services.prometheus_client - INFO - Prometheus custom query took 30.58s
+2026-03-23 23:32:30,078 - app.services.prometheus_client - INFO - get_cluster_metrics total took 50.80s
+2026-03-23 23:55:49,095 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-23 23:55:49,109 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-23 23:56:13,080 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:56:13,096 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-23 23:56:13,632 - app.services.prometheus_client - INFO - Prometheus custom query took 0.54s
+2026-03-23 23:56:13,632 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.85s
+2026-03-23 23:56:25,887 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-23 23:56:25,902 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-23 23:56:26,604 - app.services.prometheus_client - INFO - Prometheus custom query took 0.70s
+2026-03-23 23:56:26,604 - app.services.prometheus_client - INFO - get_cluster_metrics total took 10.83s
+2026-03-24 00:03:57,228 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:03:57,289 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.04s
+2026-03-24 00:03:57,567 - app.services.prometheus_client - INFO - Prometheus custom query took 0.27s
+2026-03-24 00:03:57,569 - app.services.prometheus_client - INFO - get_cluster_metrics total took 19.71s
+2026-03-24 00:04:10,764 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:04:12,071 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:04:12,277 - app.services.prometheus_client - INFO - Prometheus custom query took 0.20s
+2026-03-24 00:04:12,279 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.23s
+2026-03-24 00:04:29,034 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:04:29,036 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:04:29,213 - app.services.prometheus_client - INFO - Prometheus custom query took 0.18s
+2026-03-24 00:04:29,214 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.03s
+2026-03-24 00:07:54,879 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:07:54,894 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:07:55,080 - app.services.prometheus_client - INFO - Prometheus custom query took 0.19s
+2026-03-24 00:07:55,081 - app.services.prometheus_client - INFO - get_cluster_metrics total took 16.13s
+2026-03-24 00:08:07,937 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:08:07,953 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:08:08,015 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:08:08,016 - app.services.prometheus_client - INFO - get_cluster_metrics total took 11.30s
+2026-03-24 00:16:39,441 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-24 00:16:39,530 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-24 00:17:00,262 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:17:00,268 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:17:01,077 - app.services.prometheus_client - INFO - Prometheus custom query took 0.80s
+2026-03-24 00:17:01,077 - app.services.prometheus_client - INFO - get_cluster_metrics total took 20.01s
+2026-03-24 00:17:15,428 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:17:15,434 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:17:15,700 - app.services.prometheus_client - INFO - Prometheus custom query took 0.27s
+2026-03-24 00:17:15,724 - app.services.prometheus_client - INFO - get_cluster_metrics total took 17.71s
+2026-03-24 00:17:37,021 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:17:37,023 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:17:37,037 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:17:37,038 - app.services.prometheus_client - INFO - get_cluster_metrics total took 19.29s
+2026-03-24 00:17:52,578 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:17:52,594 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:17:52,712 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-24 00:17:52,713 - app.services.prometheus_client - INFO - get_cluster_metrics total took 18.02s
+2026-03-24 00:22:06,528 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-24 00:22:06,625 - app.services.prometheus_client - INFO - Connected to Redis at localhost:6379
+2026-03-24 00:23:36,546 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:23:36,561 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:23:37,021 - app.services.prometheus_client - INFO - Prometheus custom query took 0.46s
+2026-03-24 00:23:37,021 - app.services.prometheus_client - INFO - get_cluster_metrics total took 14.09s
+2026-03-24 00:26:23,877 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:26:23,881 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:26:23,905 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:26:23,905 - app.services.prometheus_client - INFO - get_cluster_metrics total took 17.91s
+2026-03-24 00:26:46,151 - app.services.prometheus_client - ERROR - Error fetching metrics from Redis: Timeout connecting to server
+2026-03-24 00:26:46,154 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:26:46,236 - app.services.prometheus_client - INFO - Prometheus custom query took 0.08s
+2026-03-24 00:26:46,237 - app.services.prometheus_client - INFO - get_cluster_metrics total took 15.62s
+2026-03-24 00:30:20,376 - app.services.prometheus_client - INFO - Initialized Prometheus client for http://localhost:9090
+2026-03-24 00:30:34,435 - app.services.prometheus_client - WARNING - Redis not available (Timeout connecting to server). Operations requiring Redis will be skipped.
+2026-03-24 00:34:59,091 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.20s
+2026-03-24 00:35:01,095 - app.services.prometheus_client - INFO - Prometheus custom query took 1.88s
+2026-03-24 00:35:01,106 - app.services.prometheus_client - INFO - get_cluster_metrics total took 2.22s
+2026-03-24 00:35:07,120 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:35:07,573 - app.services.prometheus_client - INFO - Prometheus custom query took 0.45s
+2026-03-24 00:35:07,593 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.49s
+2026-03-24 00:35:12,142 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:35:12,211 - app.services.prometheus_client - INFO - Prometheus custom query took 0.07s
+2026-03-24 00:35:12,228 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.09s
+2026-03-24 00:35:27,284 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:35:27,345 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:35:27,349 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.08s
+2026-03-24 00:35:31,659 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:35:31,678 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:35:31,679 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:35:36,863 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:35:36,960 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:35:36,961 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.12s
+2026-03-24 00:35:43,110 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:35:44,012 - app.services.prometheus_client - INFO - Prometheus custom query took 0.90s
+2026-03-24 00:35:44,037 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.93s
+2026-03-24 00:35:46,499 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:35:46,654 - app.services.prometheus_client - INFO - Prometheus custom query took 0.15s
+2026-03-24 00:35:46,655 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.19s
+2026-03-24 00:35:51,892 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:35:52,071 - app.services.prometheus_client - INFO - Prometheus custom query took 0.14s
+2026-03-24 00:35:52,101 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.23s
+2026-03-24 00:35:56,848 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:35:56,997 - app.services.prometheus_client - INFO - Prometheus custom query took 0.11s
+2026-03-24 00:35:57,047 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.22s
+2026-03-24 00:36:02,937 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:36:03,052 - app.services.prometheus_client - INFO - Prometheus custom query took 0.11s
+2026-03-24 00:36:03,062 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.15s
+2026-03-24 00:36:06,585 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:36:07,642 - app.services.prometheus_client - INFO - Prometheus custom query took 1.05s
+2026-03-24 00:36:07,642 - app.services.prometheus_client - INFO - get_cluster_metrics total took 1.06s
+2026-03-24 00:36:12,253 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:36:12,355 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:36:12,376 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.13s
+2026-03-24 00:36:17,735 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:36:17,904 - app.services.prometheus_client - INFO - Prometheus custom query took 0.14s
+2026-03-24 00:36:17,926 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.22s
+2026-03-24 00:36:21,901 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:36:21,986 - app.services.prometheus_client - INFO - Prometheus custom query took 0.07s
+2026-03-24 00:36:21,995 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.11s
+2026-03-24 00:36:26,676 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:36:26,768 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:36:26,785 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.12s
+2026-03-24 00:36:33,049 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:36:33,072 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:36:33,074 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:36:36,514 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:36:36,679 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-24 00:36:36,685 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.18s
+2026-03-24 00:36:41,742 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:36:41,826 - app.services.prometheus_client - INFO - Prometheus custom query took 0.08s
+2026-03-24 00:36:41,836 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.10s
+2026-03-24 00:36:48,563 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:36:48,606 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:36:48,641 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.09s
+2026-03-24 00:36:51,553 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.04s
+2026-03-24 00:36:51,598 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:36:51,603 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.09s
+2026-03-24 00:36:56,805 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:36:56,855 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:36:56,867 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:37:02,861 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:37:02,873 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:37:02,880 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:37:06,952 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:07,082 - app.services.prometheus_client - INFO - Prometheus custom query took 0.11s
+2026-03-24 00:37:07,085 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.14s
+2026-03-24 00:37:13,204 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.04s
+2026-03-24 00:37:13,611 - app.services.prometheus_client - INFO - Prometheus custom query took 0.41s
+2026-03-24 00:37:13,632 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.47s
+2026-03-24 00:37:16,545 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:16,599 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:37:16,609 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:37:21,728 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:21,867 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-24 00:37:21,873 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.15s
+2026-03-24 00:37:33,318 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:37:33,364 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:37:33,371 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.08s
+2026-03-24 00:37:36,655 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:36,752 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:37:36,793 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.15s
+2026-03-24 00:37:44,007 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.05s
+2026-03-24 00:37:44,340 - app.services.prometheus_client - INFO - Prometheus custom query took 0.32s
+2026-03-24 00:37:44,384 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.42s
+2026-03-24 00:37:46,485 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:46,718 - app.services.prometheus_client - INFO - Prometheus custom query took 0.22s
+2026-03-24 00:37:46,720 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.24s
+2026-03-24 00:37:52,290 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:37:52,370 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:37:52,377 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.10s
+2026-03-24 00:37:56,768 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:37:56,779 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:37:56,780 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.01s
+2026-03-24 00:38:01,700 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:38:01,714 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:38:01,716 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:38:07,201 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:38:07,271 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:38:07,281 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.10s
+2026-03-24 00:38:11,696 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:11,730 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:38:11,736 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:38:16,955 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:17,127 - app.services.prometheus_client - INFO - Prometheus custom query took 0.17s
+2026-03-24 00:38:17,131 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.18s
+2026-03-24 00:38:21,879 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:38:21,913 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:38:21,919 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:38:26,731 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:27,202 - app.services.prometheus_client - INFO - Prometheus custom query took 0.47s
+2026-03-24 00:38:27,204 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.48s
+2026-03-24 00:38:31,788 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:38:31,808 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:38:31,808 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:38:37,641 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:37,807 - app.services.prometheus_client - INFO - Prometheus custom query took 0.16s
+2026-03-24 00:38:37,809 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.18s
+2026-03-24 00:38:41,551 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:41,737 - app.services.prometheus_client - INFO - Prometheus custom query took 0.18s
+2026-03-24 00:38:41,819 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.28s
+2026-03-24 00:38:46,729 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:38:46,782 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:38:46,786 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:38:53,291 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:53,340 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:38:53,343 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:38:56,493 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:38:56,547 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:38:56,551 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:39:02,946 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:39:02,974 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:39:02,978 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:39:06,888 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:39:06,948 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:39:06,986 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.12s
+2026-03-24 00:39:12,734 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:39:12,786 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:39:12,790 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:39:16,934 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:39:16,947 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:39:16,948 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:39:23,244 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:39:23,290 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:39:23,293 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:39:26,482 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:39:26,503 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:39:26,503 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:39:33,814 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:39:35,812 - app.services.prometheus_client - INFO - Prometheus custom query took 1.99s
+2026-03-24 00:39:36,189 - app.services.prometheus_client - INFO - get_cluster_metrics total took 2.37s
+2026-03-24 00:39:43,505 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.14s
+2026-03-24 00:39:44,312 - app.services.prometheus_client - INFO - Prometheus custom query took 0.73s
+2026-03-24 00:39:44,401 - app.services.prometheus_client - INFO - get_cluster_metrics total took 1.04s
+2026-03-24 00:39:47,211 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.64s
+2026-03-24 00:39:48,009 - app.services.prometheus_client - INFO - Prometheus custom query took 0.64s
+2026-03-24 00:39:48,163 - app.services.prometheus_client - INFO - get_cluster_metrics total took 1.59s
+2026-03-24 00:39:53,732 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.10s
+2026-03-24 00:39:54,374 - app.services.prometheus_client - INFO - Prometheus custom query took 0.47s
+2026-03-24 00:39:54,532 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.86s
+2026-03-24 00:40:01,521 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:40:01,904 - app.services.prometheus_client - INFO - Prometheus custom query took 0.35s
+2026-03-24 00:40:01,913 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.42s
+2026-03-24 00:40:06,805 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:40:06,817 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:40:06,819 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:40:14,805 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:40:14,857 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:40:14,859 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.08s
+2026-03-24 00:40:16,516 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:40:16,559 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:40:16,568 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:40:21,922 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:40:22,570 - app.services.prometheus_client - INFO - Prometheus custom query took 0.64s
+2026-03-24 00:40:22,572 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.66s
+2026-03-24 00:40:27,062 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:40:27,278 - app.services.prometheus_client - INFO - Prometheus custom query took 0.17s
+2026-03-24 00:40:27,323 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.26s
+2026-03-24 00:40:31,813 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:40:32,051 - app.services.prometheus_client - INFO - Prometheus custom query took 0.24s
+2026-03-24 00:40:32,053 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.25s
+2026-03-24 00:40:36,742 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:40:36,977 - app.services.prometheus_client - INFO - Prometheus custom query took 0.23s
+2026-03-24 00:40:36,980 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.26s
+2026-03-24 00:40:41,658 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:40:41,697 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:40:41,703 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:40:46,952 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.04s
+2026-03-24 00:40:47,111 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-24 00:40:47,113 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.20s
+2026-03-24 00:40:53,008 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:40:53,062 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:40:53,063 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:40:56,711 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:40:56,756 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:40:56,760 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:41:04,215 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:04,272 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:41:04,273 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:41:06,544 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:06,575 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:41:06,577 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:41:11,793 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:11,810 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:41:11,811 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:41:16,784 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:41:16,879 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:41:16,881 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.12s
+2026-03-24 00:41:21,786 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:41:21,796 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:41:21,796 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:41:28,159 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:28,334 - app.services.prometheus_client - INFO - Prometheus custom query took 0.17s
+2026-03-24 00:41:28,335 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.18s
+2026-03-24 00:41:32,011 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:32,024 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:41:32,025 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:41:36,554 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:36,579 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:41:36,581 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:41:42,964 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:42,982 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:41:42,982 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:41:46,759 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:46,791 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:41:46,797 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:41:53,899 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:41:53,945 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:41:53,951 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:41:56,484 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:41:56,515 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:41:56,517 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:42:04,177 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:42:04,304 - app.services.prometheus_client - INFO - Prometheus custom query took 0.13s
+2026-03-24 00:42:04,308 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.16s
+2026-03-24 00:42:06,491 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:42:06,615 - app.services.prometheus_client - INFO - Prometheus custom query took 0.12s
+2026-03-24 00:42:06,617 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.15s
+2026-03-24 00:42:15,050 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:42:15,169 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:42:15,179 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.15s
+2026-03-24 00:42:16,545 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:42:16,627 - app.services.prometheus_client - INFO - Prometheus custom query took 0.07s
+2026-03-24 00:42:16,635 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.11s
+2026-03-24 00:42:21,695 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:42:21,730 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:42:21,731 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:42:26,814 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.05s
+2026-03-24 00:42:26,916 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:42:26,917 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.16s
+2026-03-24 00:42:31,754 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:42:31,823 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:42:31,833 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.10s
+2026-03-24 00:42:36,831 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:42:36,889 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:42:36,896 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:42:41,974 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:42:42,162 - app.services.prometheus_client - INFO - Prometheus custom query took 0.15s
+2026-03-24 00:42:42,169 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.21s
+2026-03-24 00:42:48,878 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.04s
+2026-03-24 00:42:48,994 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:42:49,015 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.18s
+2026-03-24 00:42:51,473 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:42:51,494 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:42:51,495 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:42:56,730 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:42:56,794 - app.services.prometheus_client - INFO - Prometheus custom query took 0.06s
+2026-03-24 00:42:56,796 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:43:02,799 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:03,198 - app.services.prometheus_client - INFO - Prometheus custom query took 0.35s
+2026-03-24 00:43:03,200 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.41s
+2026-03-24 00:43:15,842 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:43:15,871 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:43:15,872 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:43:16,734 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.02s
+2026-03-24 00:43:16,767 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:43:16,768 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:43:22,783 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:23,267 - app.services.prometheus_client - INFO - Prometheus custom query took 0.48s
+2026-03-24 00:43:23,270 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.49s
+2026-03-24 00:43:26,556 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:43:26,614 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:43:26,614 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.09s
+2026-03-24 00:43:31,698 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:31,731 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:43:31,736 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:43:38,181 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:38,322 - app.services.prometheus_client - INFO - Prometheus custom query took 0.13s
+2026-03-24 00:43:38,330 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.16s
+2026-03-24 00:43:42,795 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:42,890 - app.services.prometheus_client - INFO - Prometheus custom query took 0.09s
+2026-03-24 00:43:42,897 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.11s
+2026-03-24 00:43:48,332 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:43:48,512 - app.services.prometheus_client - INFO - Prometheus custom query took 0.18s
+2026-03-24 00:43:48,512 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.19s
+2026-03-24 00:43:52,757 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:43:52,806 - app.services.prometheus_client - INFO - Prometheus custom query took 0.05s
+2026-03-24 00:43:52,817 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.07s
+2026-03-24 00:43:57,685 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:43:57,705 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:43:57,715 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:44:02,684 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:02,763 - app.services.prometheus_client - INFO - Prometheus custom query took 0.08s
+2026-03-24 00:44:02,767 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.09s
+2026-03-24 00:44:07,698 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:07,719 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:44:07,722 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:44:12,784 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:44:12,818 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:44:12,821 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:44:17,909 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:17,946 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:44:17,947 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:44:22,802 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:22,815 - app.services.prometheus_client - INFO - Prometheus custom query took 0.01s
+2026-03-24 00:44:22,819 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.02s
+2026-03-24 00:44:27,719 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:44:27,767 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:44:27,770 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.06s
+2026-03-24 00:44:32,789 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:32,825 - app.services.prometheus_client - INFO - Prometheus custom query took 0.03s
+2026-03-24 00:44:32,827 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.04s
+2026-03-24 00:44:43,915 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:44:44,126 - app.services.prometheus_client - INFO - Prometheus custom query took 0.21s
+2026-03-24 00:44:44,127 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.24s
+2026-03-24 00:44:46,322 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:46,464 - app.services.prometheus_client - INFO - Prometheus custom query took 0.14s
+2026-03-24 00:44:46,464 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.14s
+2026-03-24 00:44:51,409 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:44:51,452 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:44:51,454 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s
+2026-03-24 00:44:57,352 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:45:02,536 - app.services.prometheus_client - INFO - Prometheus custom query took 5.18s
+2026-03-24 00:45:02,554 - app.services.prometheus_client - INFO - get_cluster_metrics total took 5.20s
+2026-03-24 00:45:06,486 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.03s
+2026-03-24 00:45:06,628 - app.services.prometheus_client - INFO - Prometheus custom query took 0.14s
+2026-03-24 00:45:06,895 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.44s
+2026-03-24 00:45:11,463 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.01s
+2026-03-24 00:45:11,488 - app.services.prometheus_client - INFO - Prometheus custom query took 0.02s
+2026-03-24 00:45:11,490 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.03s
+2026-03-24 00:45:16,478 - app.services.prometheus_client - INFO - Prometheus reachability check (socket) took 0.00s
+2026-03-24 00:45:16,528 - app.services.prometheus_client - INFO - Prometheus custom query took 0.04s
+2026-03-24 00:45:16,528 - app.services.prometheus_client - INFO - get_cluster_metrics total took 0.05s

@@ -13,11 +13,11 @@ class Settings(BaseSettings):
     VAULT_SECRET_KEY: str = "your-very-secret-vault-key-change-it" # Use 32-byte string for Fernet
     
     # Redis for WebSocket Pub/Sub
-    REDIS_URL: str = "redis://localhost:6379/1"
+    REDIS_URL: str = "redis://127.0.0.1:6379/1"
     
     # GitHub Config
     GITHUB_WEBHOOK_SECRET: Optional[str] = None
-    VAULT_SERVICE_URL: str = "http://localhost:8002/api/v1"
+    VAULT_SERVICE_URL: str = "http://127.0.0.1:8002"
     
     class Config:
         env_file = ".env"

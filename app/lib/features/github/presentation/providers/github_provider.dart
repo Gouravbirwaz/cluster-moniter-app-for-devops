@@ -19,7 +19,22 @@ class GitHubProvider with ChangeNotifier {
 
   GitHubProvider({required this.repository, this.webSocketService}) {
     fetchRepos();
+    _initWebSocket();
   }
+
+  void _initWebSocket() {
+    _repoSubscription = webSocketService?.stream.listen((event) {
+      if (event['type'] == 'github_event') {
+        final resource = event['resource'] as String?;
+        if (resource != null) {
+          // Automatic refresh for specific repository if details are open
+          fetchRepoDetails(resource);
+          fetchRepos();
+        }
+      }
+    });
+  }
+
 
   List<GitHubRepo> get repos => _repos;
   Map<String, List<GitHubCommit>> get repoCommits => _repoCommits;
@@ -71,25 +86,10 @@ class GitHubProvider with ChangeNotifier {
     }
   }
 
-  void subscribeToRepo(String owner, String repo) async {
-    if (webSocketService == null) return;
-    
-    await _repoSubscription?.cancel();
-    
-    final channel = '/ws/repo/$owner/$repo';
-    try {
-      final stream = await webSocketService!.createStandaloneStream(channel);
-      _repoSubscription = stream.listen((event) {
-        if (event['type'] == 'GITHUB_EVENT') {
-          // Refresh data or handle specific event types
-          // fetchCommits(owner, repo);
-          notifyListeners();
-        }
-      });
-    } catch (e) {
-      debugPrint('GitHub WS Error: $e');
-    }
+  void subscribeToRepo(String owner, String repo) {
+    // Legacy method, no longer needed as we listen to unified stream
   }
+
 
   @override
   void dispose() {

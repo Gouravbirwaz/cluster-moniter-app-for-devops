@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 class PrometheusClient:
     def __init__(self):
         self.url = f"{settings.PROMETHEUS_URL}/api/v1/query"
-        self.client = httpx.AsyncClient(timeout=10.0)
+        self.client = httpx.AsyncClient(timeout=5.0)
 
     async def query(self, query_str: str) -> dict:
         try:

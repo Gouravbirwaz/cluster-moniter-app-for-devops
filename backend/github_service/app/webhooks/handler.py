@@ -1,16 +1,20 @@
-from fastapi import APIRouter, Request, Header, HTTPException
-from app.websocket.websocket_manager import manager
 import hmac
 import hashlib
 import json
 import logging
+import redis
+from fastapi import APIRouter, Request, Header, HTTPException
+from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/webhooks", tags=["webhooks"])
 
+# Redis connection
+redis_client = redis.Redis.from_url(settings.REDIS_URL, decode_responses=True)
+
 def verify_signature(payload: bytes, signature: str, secret: str):
     if not secret:
-        return True # Or handle as error
+        return True 
     
     expected_signature = "sha256=" + hmac.new(
         secret.encode(),
@@ -27,7 +31,6 @@ async def github_webhook(
     x_hub_signature_256: str = Header(None)
 ):
     payload = await request.body()
-    # In a real app, verify signature here if secret is configured
     
     try:
         data = json.loads(payload)
@@ -35,19 +38,19 @@ async def github_webhook(
         if not repo_full_name:
             return {"status": "ignored", "reason": "no repository info"}
 
-        channel = f"repo_{repo_full_name.replace('/', '_')}"
-        
-        message = {
-            "type": "GITHUB_EVENT",
+        event_msg = {
+            "type": "github_event",
             "event": x_github_event,
-            "data": data
+            "resource": repo_full_name,
+            "message": f"GitHub {x_github_event} event in {repo_full_name}"
         }
         
-        # Broadcast to anyone interested in this repo
-        await manager.broadcast(message, channel)
+        # Publish to unified events stream
+        redis_client.xadd("events", {"payload": json.dumps(event_msg)})
         
-        logger.info(f"Processed {x_github_event} for {repo_full_name}")
+        logger.info(f"Processed {x_github_event} for {repo_full_name} and published to Redis")
         return {"status": "processed"}
     except Exception as e:
         logger.error(f"Webhook processing failed: {e}")
         return {"status": "error", "detail": str(e)}
+

@@ -1,21 +1,35 @@
-from cryptography.fernet import Fernet
+from Cryptodome.Cipher import AES
+from Cryptodome.Random import get_random_bytes
 from app.core.config import settings
 import base64
+import json
 
 class EncryptionService:
     def __init__(self):
-        # Fernet requires 32-urlsafe-base64-encoded bytes
-        key = settings.VAULT_SECRET_KEY
-        if len(key) < 32:
-            key = (key * 32)[:32]
-        
-        encoded_key = base64.urlsafe_b64encode(key.encode() if isinstance(key, str) else key)
-        self.fernet = Fernet(encoded_key)
+        # Key must be 32 bytes for AES-256
+        key_str = settings.VAULT_SECRET_KEY
+        if len(key_str) < 32:
+            key_str = (key_str * 32)[:32]
+        self.key = key_str.encode()[:32]
 
     def encrypt(self, plain_text: str) -> str:
-        return self.fernet.encrypt(plain_text.encode()).decode()
+        nonce = get_random_bytes(12)
+        cipher = AES.new(self.key, AES.MODE_GCM, nonce=nonce)
+        ciphertext, tag = cipher.encrypt_and_digest(plain_text.encode())
+        
+        # Combine nonce, tag, and ciphertext
+        combined = base64.b64encode(nonce + tag + ciphertext).decode()
+        return combined
 
     def decrypt(self, encrypted_text: str) -> str:
-        return self.fernet.decrypt(encrypted_text.encode()).decode()
+        data = base64.b64decode(encrypted_text.encode())
+        nonce = data[:12]
+        tag = data[12:28]
+        ciphertext = data[28:]
+        
+        cipher = AES.new(self.key, AES.MODE_GCM, nonce=nonce)
+        decrypted = cipher.decrypt_and_verify(ciphertext, tag)
+        return decrypted.decode()
 
 encryption_service = EncryptionService()
+

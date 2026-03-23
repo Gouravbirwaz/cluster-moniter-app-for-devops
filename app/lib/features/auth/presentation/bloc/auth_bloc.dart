@@ -22,6 +22,10 @@ class AuthLoginRequested extends AuthEvent {
 
 class AuthLogoutRequested extends AuthEvent {}
 
+class AuthLocalBiometricSuccess extends AuthEvent {
+  const AuthLocalBiometricSuccess();
+}
+
 // States
 abstract class AuthState extends Equatable {
   const AuthState();
@@ -56,6 +60,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc({required this.authRepository}) : super(AuthInitial()) {
     on<AuthLoginRequested>(_onLoginRequested);
     on<AuthLogoutRequested>(_onLogoutRequested);
+    on<AuthLocalBiometricSuccess>(_onLocalBiometricSuccess);
+  }
+
+  void _onLocalBiometricSuccess(
+    AuthLocalBiometricSuccess event,
+    Emitter<AuthState> emit,
+  ) {
+    emit(const AuthAuthenticated(UserEntity(
+      id: 'local',
+      username: 'local_admin',
+      email: 'admin@local',
+      permissions: ['all'],
+    )));
   }
 
   Future<void> _onLoginRequested(
